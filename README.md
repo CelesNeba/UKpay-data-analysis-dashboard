@@ -80,6 +80,7 @@ import pandas as pd
 from sqlalchemy import create_engine, text
 
 # MySQL connection
+
 engine = create_engine("mysql+pymysql://fintech:StrongPassword123@localhost/ukpay")
 
 # Load the Transactions table
