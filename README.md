@@ -13,13 +13,15 @@
 
 ### Phase 1: Database Design and SQL Implementation
 
+#### Create database
+
 Create Database ukpay;
 
---   Create tables
+####   Create tables
 
 use ukpay;
 
--- users table
+### users table
 CREATE TABLE users (
   UserID INT AUTO_INCREMENT PRIMARY KEY,
   Name VARCHAR(100) NOT NULL,
@@ -28,7 +30,10 @@ CREATE TABLE users (
   Balance DECIMAL(10,2) NOT NULL DEFAULT 0.00,
   RegistrationDate DATE NOT NULL
 );
--- transactions table
+
+
+
+### transactions table
 
 CREATE TABLE Transactions (
   TransactionID BIGINT PRIMARY KEY,
@@ -38,5 +43,28 @@ CREATE TABLE Transactions (
   Type VARCHAR(20) NOT NULL,
   `Date` DATE NOT NULL,
   UtilityType VARCHAR(20) NULL
+);
+
+
+
+#### merchants table
+CREATE TABLE merchants (
+  MerchantID INT AUTO_INCREMENT PRIMARY KEY,
+  MerchantName VARCHAR(255) NOT NULL,
+  Category VARCHAR(100),
+  Location VARCHAR(255)
+);
+
+
+#### Utility Payments table
+
+-- I populated 2000+ rows of mock data from python, and push to  UtilityPayments
+
+CREATE TABLE UtilityPayments (        
+    PaymentID BIGINT PRIMARY KEY,
+    UserID INT NOT NULL,
+    UtilityType VARCHAR(20) NOT NULL,
+    Amount DECIMAL(10,2) NOT NULL,
+    `Date` DATETIME NOT NULL
 );
 
