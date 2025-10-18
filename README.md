@@ -77,6 +77,7 @@ o	Overall system performance dashboard showing metrics like total transactions, 
 	Include interactive filters to analyze data by date range, user demographics, and transaction types.
 
 
+![UK Pay Dashboard Screenshot](https://github.com/CelesNeba/UKpay-data-analysis-dashboard/raw/main/UKpay%20dashboard%20Screenshot.png)
 
 
   
