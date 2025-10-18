@@ -4,7 +4,7 @@
 
 
 ### 📂 Cleaned dataset
-[⬇️ Download Merchants Dataset](https://github.com/CelesNeba/UKpay-data-analysis-dashboard/raw/main/ukpay_merchants.csv)
-[⬇️ Download Transactions Dataset](https://github.com/CelesNeba/UKpay-data-analysis-dashboard/raw/main/ukpay_transactions.csv)
-[⬇️ Download Users Dataset](https://github.com/CelesNeba/UKpay-data-analysis-dashboard/raw/main/ukpay_users.csv)
+[📊 View Merchants Dataset](https://github.com/CelesNeba/UKpay-data-analysis-dashboard/blob/main/ukpay_merchants.csv)
+[📊 View Transactions Dataset](https://github.com/CelesNeba/UKpay-data-analysis-dashboard/blob/main/ukpay_transactions.csv)
+[📊 View Users Dataset](https://github.com/CelesNeba/UKpay-data-analysis-dashboard/blob/main/ukpay_users.csv)
 
