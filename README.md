@@ -10,3 +10,33 @@
 
 ▪[ View Users Dataset](https://github.com/CelesNeba/UKpay-data-analysis-dashboard/blob/main/ukpay_users.csv)
 
+
+### Phase 1: Database Design and SQL Implementation
+
+Create Database ukpay;
+
+--   Create tables
+
+use ukpay;
+
+-- users table
+CREATE TABLE users (
+  UserID INT AUTO_INCREMENT PRIMARY KEY,
+  Name VARCHAR(100) NOT NULL,
+  Email VARCHAR(255) NOT NULL UNIQUE,
+  Phone VARCHAR(30) UNIQUE,
+  Balance DECIMAL(10,2) NOT NULL DEFAULT 0.00,
+  RegistrationDate DATE NOT NULL
+);
+-- transactions table
+
+CREATE TABLE Transactions (
+  TransactionID BIGINT PRIMARY KEY,
+  UserID INT NOT NULL,
+  RecipientID INT NULL,   
+  Amount DECIMAL(10,2) NOT NULL,
+  Type VARCHAR(20) NOT NULL,
+  `Date` DATE NOT NULL,
+  UtilityType VARCHAR(20) NULL
+);
+
