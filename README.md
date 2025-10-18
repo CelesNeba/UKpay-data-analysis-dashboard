@@ -15,17 +15,24 @@
 
 #### Objective: Design a relational database to store transaction details, user profiles, and services.
 
-####Steps:
-1.	Define tables for:
+
+####	Define tables for:
    
 o	Users: UserID, Name, Email, Phone, Balance, RegistrationDate.
+
 o	Transactions: TransactionID, UserID, RecipientID, Amount, Type (P2P, Utility, Merchant), Date.
+
 o	Merchants: MerchantID, MerchantName, Category, Location.
+
 o	UtilityPayments: PaymentID, UserID, UtilityType (Electricity, Gas, Water), Amount, Date.
 
+
 ####	Write SQL queries to:
+
 o	Retrieve monthly transaction summaries for each user.
+
 o	Identify top-performing merchants based on transaction volume.
+
 o	Calculate the average utility bill amount per user.
 
 
