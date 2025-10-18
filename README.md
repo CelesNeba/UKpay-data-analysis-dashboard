@@ -68,6 +68,5 @@ CREATE TABLE UtilityPayments (
     `Date` DATETIME NOT NULL
 );
 
-https://github.com/CelesNeba/UKpay-data-analysis-dashboard/blob/main/Mysql%20project%20sreenshot.png
 
 
