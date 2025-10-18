@@ -11,100 +11,33 @@
 ▪[ View Users Dataset](https://github.com/CelesNeba/UKpay-data-analysis-dashboard/blob/main/ukpay_users.csv)
 
 
-### Phase 1: Database Design and SQL Implementation
+#### Phase 1: Database Design and SQL Implementation
 
-#### Create database
+#### Objective: Design a relational database to store transaction details, user profiles, and services.
 
-Create Database ukpay;
+####Steps:
+1.	Define tables for:
+   
+o	Users: UserID, Name, Email, Phone, Balance, RegistrationDate.
+o	Transactions: TransactionID, UserID, RecipientID, Amount, Type (P2P, Utility, Merchant), Date.
+o	Merchants: MerchantID, MerchantName, Category, Location.
+o	UtilityPayments: PaymentID, UserID, UtilityType (Electricity, Gas, Water), Amount, Date.
 
-####   Create tables
-
-use ukpay;
-
-### users table
-CREATE TABLE users (
-  UserID INT AUTO_INCREMENT PRIMARY KEY,
-  Name VARCHAR(100) NOT NULL,
-  Email VARCHAR(255) NOT NULL UNIQUE,
-  Phone VARCHAR(30) UNIQUE,
-  Balance DECIMAL(10,2) NOT NULL DEFAULT 0.00,
-  RegistrationDate DATE NOT NULL
-);
+####	Write SQL queries to:
+o	Retrieve monthly transaction summaries for each user.
+o	Identify top-performing merchants based on transaction volume.
+o	Calculate the average utility bill amount per user.
 
 
-
-#### transactions table
-
-CREATE TABLE Transactions (
-  TransactionID BIGINT PRIMARY KEY,
-  UserID INT NOT NULL,
-  RecipientID INT NULL,   
-  Amount DECIMAL(10,2) NOT NULL,
-  Type VARCHAR(20) NOT NULL,
-  `Date` DATE NOT NULL,
-  UtilityType VARCHAR(20) NULL
-);
+  
 
 
 
-#### merchants table
-CREATE TABLE merchants (
-  MerchantID INT AUTO_INCREMENT PRIMARY KEY,
-  MerchantName VARCHAR(255) NOT NULL,
-  Category VARCHAR(100),
-  Location VARCHAR(255)
-);
 
 
-#### Utility Payments table
-
--- I populated 2000+ rows of mock data from python, and push to  UtilityPayments
-
-CREATE TABLE UtilityPayments (        
-    PaymentID BIGINT PRIMARY KEY,
-    UserID INT NOT NULL,
-    UtilityType VARCHAR(20) NOT NULL,
-    Amount DECIMAL(10,2) NOT NULL,
-    `Date` DATETIME NOT NULL
-);
-
-#### Database queries
-
-#### 1. Retrieve monthly transaction summaries for each user
-SELECT 
-    UserID,
-    DATE_FORMAT(`Date`, '%Y-%m') AS YearMonth, -- DATE_FORMAT(Date, '%Y-%m') groups transactions by month
-    
-    COUNT(*) AS Num_of_ransactions, -- COUNT(*) gives the number of transactions per user per month.
-    
-    SUM(Amount) AS Total_amount -- SUM(Amount) gives total spending per user per month.
-
-FROM Transactions -- From transactions is the table name
-
-GROUP BY UserID, YearMonth -- GROUP BY tells SQL to aggregate rows that have the same values in the listed columns.
-
-ORDER BY UserID, YearMonth; -- ORDER BY determines how the results are sorted in the output.
-                            -- In this case, it would be by UserID (ascending), then by YearMonth (ascending).
 
 
-## Phase 2: Python Analytics
 
 
-####  1. Load data from MySQL into Python *****************************
-
-import pandas as pd
-
-from sqlalchemy import create_engine, text
-
-#### MySQL connection
-
-engine = create_engine("mysql+pymysql://fintech:StrongPassword123@localhost/ukpay")
-
-#### Load the Transactions table
-with engine.connect() as conn:
-    transactions = pd.read_sql("SELECT * FROM Transactions", conn)
-
-#### Preview the data
-print(transactions.head())
 
 
