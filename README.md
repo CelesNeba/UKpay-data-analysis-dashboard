@@ -74,12 +74,17 @@ CREATE TABLE UtilityPayments (
 SELECT 
     UserID,
     DATE_FORMAT(`Date`, '%Y-%m') AS YearMonth, -- DATE_FORMAT(Date, '%Y-%m') groups transactions by month
-    COUNT(*) AS Num_of_ransactions, -- COUNT(*) gives number of transactions per user per month.
+    
+    COUNT(*) AS Num_of_ransactions, -- COUNT(*) gives the number of transactions per user per month.
+    
     SUM(Amount) AS Total_amount -- SUM(Amount) gives total spending per user per month.
+
 FROM Transactions -- From transactions is the table name
+
 GROUP BY UserID, YearMonth -- GROUP BY tells SQL to aggregate rows that have the same values in the listed columns.
+
 ORDER BY UserID, YearMonth; -- ORDER BY determines how the results are sorted in the output.
-                            -- In this case it would be by UserID (ascending), then by YearMonth (ascending).
+                            -- In this case, it would be by UserID (ascending), then by YearMonth (ascending).
 
 
 ## Phase 2: Python Analytics
