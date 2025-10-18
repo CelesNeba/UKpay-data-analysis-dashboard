@@ -70,3 +70,23 @@ CREATE TABLE UtilityPayments (
 
 
 
+## Phase 2: Python Analytics
+
+
+##  1. Load data from MySQL into Python *****************************
+
+import pandas as pd
+
+from sqlalchemy import create_engine, text
+
+# MySQL connection
+engine = create_engine("mysql+pymysql://fintech:StrongPassword123@localhost/ukpay")
+
+# Load the Transactions table
+with engine.connect() as conn:
+    transactions = pd.read_sql("SELECT * FROM Transactions", conn)
+
+# Preview the data
+print(transactions.head())
+
+
