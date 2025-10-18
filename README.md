@@ -36,6 +36,49 @@ o	Identify top-performing merchants based on transaction volume.
 o	Calculate the average utility bill amount per user.
 
 
+#### Python Analytics
+
+Objective: Analyze transaction data for user insights and backend functionality.
+#### Steps:
+
+	Load data from the database into Python using libraries like pandas and sqlalchemy.
+   
+####	Perform analytics:
+
+o	Identify the most frequent transaction type for each user.
+
+o	Calculate the growth in total transactions month-over-month.
+
+o	Create user segmentation based on transaction frequency and average transaction size.
+
+####	Simulate backend logic:
+o	Deduct balances for successful transactions.
+o	Generate reminders for users with low balances.
+o	Provide insights into spending patterns using Python visualizations (matplotlib, seaborn).
+
+
+## Phase 3: Data Visualization
+
+Objective: Build dashboards to visualize trends and insights.
+
+Tool: Power BI 
+
+Steps:
+1.	Import the data processed in Python into the visualization tool.
+
+2.	Create dashboards:
+
+o	User-level dashboard showing individual spending trends, transaction categories, and balance history.
+
+o	Merchant-level dashboard displaying transaction volume, revenue, and top customers.
+
+o	Overall system performance dashboard showing metrics like total transactions, active users, and revenue trends.
+
+	Include interactive filters to analyze data by date range, user demographics, and transaction types.
+
+
+
+
   
 
 
