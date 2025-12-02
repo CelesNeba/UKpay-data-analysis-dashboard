@@ -94,7 +94,8 @@ o Interactive filters to analyze data by date range, user demographics, and tran
 
 
 
-###My recommendation to stakeholders
+### My recommendation to stakeholders
+
 Based on the UKPay data analysis, I recommend that stakeholders focus on enhancing user engagement and merchant partnerships. Prioritize strategies to increase active users, such as targeted promotions and improving user experience, while also incentivizing merchant participation to grow transaction volume and overall revenue trends.
 
 
